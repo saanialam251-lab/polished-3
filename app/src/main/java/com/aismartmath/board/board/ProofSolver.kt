@@ -806,7 +806,7 @@ private class Eng(val d: Diagram, val pf: PF, val allowIso: Boolean, val built: 
             if (f == null) false else {
                 val x = g.l1.first { it != f }
                 val ys = g.l2.filter { it != f }
-                ys.size == 2 && (rights.any { it.first == nk(ak(x, f, ys[0])) } || eq(ak(x, f, ys[0]), ak(x, f, ys[1])))
+                ys.length == 2 && (rights.any { it.first == nk(ak(x, f, ys[0])) } || eq(ak(x, f, ys[0]), ak(x, f, ys[1])))
             }
         }
     }
@@ -849,7 +849,7 @@ private class Eng(val d: Diagram, val pf: PF, val allowIso: Boolean, val built: 
                     val f = foot(g.l1, g.l2) ?: return false
                     val x = g.l1.first { it != f }
                     val ys = g.l2.filter { it != f }
-                    if (ys.size != 2) return false
+                    if (ys.length != 2) return false
                     val a1 = ak(x, f, ys[0])
                     val a2 = ak(x, f, ys[1])
                     if (rights.any { it.first == nk(a1) }) {
